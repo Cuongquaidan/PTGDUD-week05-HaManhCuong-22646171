@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import CheckBox from "/checkbox.png";
 import CheckBoxChecked from "/checkboxpink.png";
@@ -155,11 +155,24 @@ function SearchPage() {
                 </div>
             <div className=' grid grid-cols-3 gap-4 w-full'>
                     {
-                        data.map((item,index)=>{
+                        data.slice(0,9).map((item,index)=>{
                             return <Item key={item.id} name={item.name} urlImg={item.urlImg} time={item.time}></Item>
                         })
                     }
             </div>   
+            <div className='flex items-center gap-2 mt-5 justify-end w-full text-sm'>
+                <FaChevronLeft color='gray'></FaChevronLeft> 
+                <div className='p-2 text-center min-w-8 bg-[#F44B87FF] text-white rounded-sm border-gray-200 border'>1</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>2</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>3</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>4</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>...</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>9</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>10</div>
+                <div className='p-2 text-center min-w-8 rounded-sm border-gray-200 border'>11</div>
+                <FaChevronRight color='gray'></FaChevronRight>  
+
+            </div>
             </div>
         </div>
        

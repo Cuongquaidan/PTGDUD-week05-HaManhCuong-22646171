@@ -4,6 +4,7 @@ import Lab02a from "../pages/Lab02";
 import RecipeBox from "../pages/RecipeBox";
 import UseRedecer from "../UseRedecer";
 import SearchPage from "../pages/SearchPage";
+import SignUp from "../pages/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,9 @@ const router = createBrowserRouter([
             },{
                 path: "/search",
                 element: <SearchPage></SearchPage>
+            },{
+                path: "/sign-up",
+                element: <SignUp></SignUp>
             }
         ]
     }
