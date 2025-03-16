@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useReducer } from 'react'
 
 function UseRedecer() {
@@ -37,9 +37,12 @@ function UseRedecer() {
    const handleOnchange = (e)=>{
     setOperator(e.target.value)
 }
-    const handleCalculate = ()=>{
+    const handleCalculate = ()=>(
         dispatch({type: operator, payload:{num1:n1,num2:n2}})
-    }
+    )
+    const handleLogResult = useCallback(()=>{
+        console.log(state.result)
+    },[state.result])
   return (
     <div className='min-h-[500px] w-[400px] mx-auto mt-10 border rounded-2xl flex flex-col items-center justify-center p-4 gap-8'>
     <input onChange={(e)=>{setN1(e.target.value)}} type="text" placeholder='Enter first number' className='p-2 rounded-md min-w-[300px] border-green-500 border'/>
@@ -56,6 +59,7 @@ function UseRedecer() {
     </div>
     <button onClick={()=>{
        handleCalculate()
+       handleLogResult()
     }} className='!bg-green-500 block border-green-500 w-[200px]'>Tính</button>
     <div className='font-bold text-2xl'>{state.result}</div>
     </div>
@@ -63,3 +67,4 @@ function UseRedecer() {
 }
 
 export default UseRedecer
+
