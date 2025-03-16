@@ -5,6 +5,7 @@ import RecipeBox from "../pages/RecipeBox";
 import UseRedecer from "../UseRedecer";
 import SearchPage from "../pages/SearchPage";
 import SignUp from "../pages/SignUp";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,9 @@ const router = createBrowserRouter([
             },{
                 path: "/sign-up",
                 element: <SignUp></SignUp>
+            },{
+                path: "/login",
+                element: <Login></Login>
             }
         ]
     }
