@@ -3,6 +3,7 @@ import App from "../App";
 import Lab02a from "../pages/Lab02";
 import RecipeBox from "../pages/RecipeBox";
 import UseRedecer from "../UseRedecer";
+import SearchPage from "../pages/SearchPage";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,9 @@ const router = createBrowserRouter([
             },{
                 path:"/useReducer",
                 element: <UseRedecer></UseRedecer>
+            },{
+                path: "/search",
+                element: <SearchPage></SearchPage>
             }
         ]
     }
